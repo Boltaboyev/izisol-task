@@ -4,14 +4,664 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Удобный Переезд</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="./src/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./src/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./src/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/img/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="УП" />
+    <link rel="manifest" href="./src/img/favicon/site.webmanifest" />
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- style -->
     <link rel="stylesheet" href="./src/css/output.css">
 </head>
 
 <body>
-    <h1 class="text-3xl font-bold underline text-blue-600">
-        Hello world!
-    </h1>
+
+    <!-- header -->
+    <header class="bg-[#f8f8f8] h-[70px] flex justify-center items-center select-none ">
+
+        <div class="csContainer flex justify-between items-center h-full ">
+
+            <a href="#!">
+                <img src="./src/img/logo.png" alt="" class="max-[350px]:w-[100px]">
+            </a>
+
+            <div class="flex flex-col justify-center items-center  h-full">
+                <!-- desktop links -->
+                <ul class="flex justify-between items-center gap-[50px] h-full max-[1130px]:hidden ">
+                    <li class="h-full flex relative">
+                        <a class="navbar-links font-[400] text-[16px] text-[#202020] hover:text-[#52ae32] h-full flex justify-center items-center cursor-pointer"
+                            onclick="toggleDropdown()">Услуги</a>
+
+                        <!-- Dropdown menu -->
+                        <div id="dropdown"
+                            class="absolute top-full left-0 shadow-[0_20px_20px_10px_rgba(0,0,0,0.1)] bg-[#fff] w-[280px] z-50 hidden">
+                            <div class="w-full">
+                                <a href="#!"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32] border-b border-gray-100">
+                                    Квартирный переезд
+                                </a>
+                                <a href="#!"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32] border-b border-gray-100">
+                                    Офисный переезд
+                                </a>
+                                <a href="#!"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32] border-b border-gray-100">
+                                    Услуги грузчиков
+                                </a>
+                                <a href="#!"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32] border-b border-gray-100">
+                                    Грузоперевозки
+                                </a>
+                                <a href="#!"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32] border-b border-gray-100">
+                                    Разборка-сборка мебели
+                                </a>
+                                <a href="#!"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32] border-b border-gray-100">
+                                    Монтаж кондиционера
+                                </a>
+                                <a href="#!"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32]">
+                                    Уборка
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="h-full flex">
+                        <a class="navbar-links font-[400] text-[16px] text-[#202020] hover:text-[#52ae32]  h-full flex justify-center items-center"
+                            href="#!">Партнеры</a>
+                    </li>
+
+                    <li class="h-full flex">
+                        <a class="navbar-links font-[400] text-[16px] text-[#202020] hover:text-[#52ae32]  h-full flex justify-center items-center"
+                            href="#!">Галерея</a>
+                    </li>
+
+                    <li class="h-full flex">
+                        <a class="navbar-links font-[400] text-[16px] text-[#202020] hover:text-[#52ae32]  h-full flex justify-center items-center"
+                            href="#!">О нас</a>
+                    </li>
+
+                    <li class="h-full flex">
+                        <a class="navbar-links font-[400] text-[16px] text-[#202020] hover:text-[#52ae32]  h-full flex justify-center items-center"
+                            href="#!">Контакты</a>
+                    </li>
+                </ul>
+
+                <!-- mobile links -->
+                <div id="mobile-menu"
+                    class="transition-all duration-300 ease-in-out max-[1130px]:flex hidden flex-col justify-between p-[10px_30px] h-fit w-full bg-white absolute -left-[100%] top-[70px] z-50">
+
+                    <details class="group font-[400] text-[16px] text-[#202020] py-[10px] border-b border-b-[#e3e3e3]">
+                        <summary class="flex items-center justify-between cursor-pointer">
+                            Услуги
+                            <!-- Custom arrow -->
+                            <svg class="w-6 h-6 transition-transform duration-300 -rotate-90 group-open:rotate-0"
+                                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </summary>
+
+                        <div class="flex flex-col p-[10px_30px] *:py-[7px] *:active:text-[#52ae32]">
+                            <a href="#!">Квартирный переезд</a>
+                            <a href="#!">Офисный переезд</a>
+                            <a href="#!">Услуги грузчиков</a>
+                            <a href="#!">Грузоперевозки</a>
+                            <a href="#!">Разборка-сборка мебели</a>
+                            <a href="#!">Монтаж кондиционера</a>
+                            <a href="#!">Уборка</a>
+                        </div>
+                    </details>
+
+
+                    <a class="font-[400] text-[16px] text-[#202020] hover:text-[#52ae32] py-[10px]  border-b border-b-[#e3e3e3]"
+                        href="#!">Партнеры</a>
+
+                    <a class=" font-[400] text-[16px] text-[#202020] hover:text-[#52ae32]  py-[10px] border-b border-b-[#e3e3e3]"
+                        href="#!">Галерея</a>
+
+                    <a class="font-[400] text-[16px] text-[#202020] hover:text-[#52ae32]  py-[10px] border-b border-b-[#e3e3e3]"
+                        href="#!">О
+                        нас</a>
+
+                    <a class="font-[400] text-[16px] text-[#202020] hover:text-[#52ae32] py-[10px]"
+                        href="#!">Контакты</a>
+
+
+                    <div class="py-[20px] flex flex-col gap-[10px]">
+                        <button class="btn !w-full">
+                            Задать вопрос
+                        </button>
+
+                        <p class="text-[#333] font-semibold text-[14px] text-center">Мы в социальных сетях</p>
+
+                        <div class="flex justify-center items-center gap-[10px] *:cursor-pointer">
+                            <img src="./src/svg/instagram.svg" alt="">
+                            <img src="./src/svg/telegram.svg" alt="">
+                            <img src="./src/svg/facebook.svg" alt="">
+                            <img src="./src/svg/youtube.svg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="flex justify-between items-center gap-[30px]">
+
+                <!-- contact -->
+                <div class="flex flex-col justify-between items-start gap-0 leading-[100%]">
+                    <a class="text-[14px] font-[500] text-[#202020] hover:text-[#52ae32] max-[420px]:text-[13px]"
+                        href="tel:998942803738">+998
+                        94
+                        280 37
+                        38</a>
+                    <a class="text-[14px] font-[500] text-[#202020] hover:text-[#52ae32] max-[420px]:text-[13px]"
+                        href="tel:998933999051">+998
+                        93
+                        399 90
+                        51</a>
+                    <small class="font-[400] text-[12px] leading-[100%] text-[#7d7d7d] max-[420px]:hidden">c 8:00 до
+                        01:00,
+                        ежедневно</small>
+                </div>
+
+                <!-- desktop heder btn -->
+                <button class="btn max-[1130px]:hidden">
+                    Задать вопрос
+                </button>
+
+                <!-- menu btn -->
+                <i id="menu-btn"
+                    class="fa-solid fa-bars text-2xl w-[27px] justify-center items-center max-[1130px]:!flex !hidden cursor-pointer"></i>
+
+            </div>
+
+        </div>
+    </header>
+
+    <!-- showcase -->
+    <section>
+
+        <!-- Swiper -->
+        <div class="swiper showcaseSwiper h-[calc(100vh-70px)] select-none">
+            <div class="swiper-wrapper">
+
+                <!-- slider 1 -->
+                <div
+                    class="swiper-slide bg-[url(/src/img/showcase-slider/1.png)] bg-center bg-no-repeat bg-cover flex justify-center items-center">
+                    <div
+                        class="csContainer flex flex-col justify-center items-center gap-[70px] h-full max-[840px]:items-start">
+
+                        <div class="flex flex-col justify-center items-center gap-[10px] max-[840px]:items-start">
+                            <h1
+                                class="font-[700] text-[38px] leading-[120%] text-center text-[#fff] max-[840px]:text-start max-[525px]:text-[30px] max-[400px]:text-[25px] max-[310px]:text-[20px]">
+                                Квартирный и
+                                офисный
+                                <br class="max-[400px]:hidden"> переезд в
+                                Ташкенте “под ключ”
+                            </h1>
+
+                            <p class="w-[65%] text-center font-[400] text-[15px] text-[#fff] max-[840px]:hidden">
+                                Грузчики по сути дела являются ключевыми фигурами в ходе грузоперевозок. Они выполняют
+                                практически весь перечень работ
+                                при переезде.
+                            </p>
+
+                            <div
+                                class="flex justify-center items-center gap-[20px] max-[375px]:flex-col max-[375px]:gap-[10px] max-[375px]:items-start">
+                                <button class="btn">Оставить заявку</button>
+                                <button class="btn btn-white">Калькулятор</button>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex justify-center items-center overflow-y-scroll max-[500px]:w-full *:px-[15px] *:text-center text-white *:font-[300] *:leading-[120%] max-[840px]:*:text-start *:!text-nowrap">
+                            <p>Профессиональная <br> упаковка</p>
+                            <p class="border-l border-r border-[#fff]">Индивидуальный <br> подход</p>
+                            <p>Многолетний опыт <br> в области</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- slider 2 -->
+                <div
+                    class="swiper-slide bg-[url(/src/img/showcase-slider/2.png)] bg-center bg-no-repeat bg-cover flex justify-center items-center">
+                    <div
+                        class="csContainer flex flex-col justify-center items-center gap-[70px] h-full max-[840px]:items-start">
+
+                        <div class="flex flex-col justify-center items-center gap-[10px] max-[840px]:items-start">
+                            <h1
+                                class="font-[700] text-[38px] leading-[120%] text-center text-[#fff] max-[840px]:text-start max-[525px]:text-[30px] max-[400px]:text-[25px] max-[310px]:text-[20px]">
+                                Услуги грузчиков в Ташкенте
+                            </h1>
+
+                            <p class="w-[65%] text-center font-[400] text-[15px] text-[#fff] max-[840px]:hidden">
+                                Грузчики по сути дела являются ключевыми фигурами в ходе грузоперевозок. Они выполняют
+                                практически весь перечень работ
+                                при переезде.
+                            </p>
+
+                            <div
+                                class="flex justify-center items-center gap-[20px] max-[375px]:flex-col max-[375px]:gap-[10px] max-[375px]:items-start">
+                                <button class="btn">Оставить заявку</button>
+                                <button class="btn btn-white">Калькулятор</button>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex justify-center items-center overflow-y-scroll max-[500px]:w-full *:px-[15px] *:text-center text-white *:font-[300] *:leading-[120%] max-[840px]:*:text-start *:!text-nowrap">
+                            <p>Доступная цена <br> для вас</p>
+
+                            <p class="border-l border-r border-[#fff]">Индивидуальный <br> подход</p>
+
+                            <p>Многолетний опыт <br> в области</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- slider 3 -->
+                <div
+                    class="swiper-slide bg-[url(/src/img/showcase-slider/3.png)] bg-center bg-no-repeat bg-cover flex justify-center items-center">
+                    <div
+                        class="csContainer flex flex-col justify-center items-center gap-[70px] h-full max-[840px]:items-start">
+
+                        <div class="flex flex-col justify-center items-center gap-[10px] max-[840px]:items-start">
+                            <h1
+                                class="font-[700] text-[38px] leading-[120%] text-center text-[#fff] max-[840px]:text-start max-[525px]:text-[30px] max-[400px]:text-[25px] max-[310px]:text-[20px]">
+                                Кондиционер монтаж в Ташкенте
+                            </h1>
+
+                            <p class="w-[65%] text-center font-[400] text-[15px] text-[#fff] max-[840px]:hidden">
+                                Нужна качественная установка кондиционера в квартире, офисе или коммерческом помещении?
+                            </p>
+
+                            <div
+                                class="flex justify-center items-center gap-[20px] max-[375px]:flex-col max-[375px]:gap-[10px] max-[375px]:items-start">
+                                <button class="btn">Оставить заявку</button>
+                                <button class="btn btn-white">Калькулятор</button>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex justify-center items-center overflow-y-scroll max-[500px]:w-full *:px-[15px] *:text-center text-white *:font-[300] *:leading-[120%] max-[840px]:*:text-start *:!text-nowrap">
+                            <p>Доступная цена <br> для вас</p>
+
+                            <p class="border-l border-r border-[#fff]">Индивидуальный <br> подход</p>
+
+                            <p>Многолетний опыт <br> в области</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- slider 4 -->
+                <div
+                    class="swiper-slide bg-[url(/src/img/showcase-slider/4.png)] bg-center bg-no-repeat bg-cover flex justify-center items-center">
+                    <div
+                        class="csContainer flex flex-col justify-center items-center gap-[70px] h-full max-[840px]:items-start">
+
+                        <div class="flex flex-col justify-center items-center gap-[10px] max-[840px]:items-start">
+                            <h1
+                                class="font-[700] text-[38px] leading-[120%] text-center text-[#fff] max-[840px]:text-start max-[525px]:text-[30px] max-[400px]:text-[25px] max-[310px]:text-[20px]">
+                                Разборка-сборка мебели в Ташкенте
+                            </h1>
+
+                            <p class="w-[65%] text-center font-[400] text-[15px] text-[#fff] max-[840px]:hidden">
+                                Наша компания предоставляет профессиональные услуги по разборке и сборке мебели в
+                                Ташкенте: шкафов, кроватей, кухонь,
+                                столов, стенок и любой другой корпусной мебели.
+                            </p>
+
+                            <div
+                                class="flex justify-center items-center gap-[20px] max-[375px]:flex-col max-[375px]:gap-[10px] max-[375px]:items-start">
+                                <button class="btn">Оставить заявку</button>
+                                <button class="btn btn-white">Калькулятор</button>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex justify-center items-center overflow-y-scroll max-[500px]:w-full *:px-[15px] *:text-center text-white *:font-[300] *:leading-[120%] max-[840px]:*:text-start *:!text-nowrap">
+                            <p>Доступная цена <br> для вас</p>
+                            <p class="border-l border-r border-[#fff]">Индивидуальный <br> подход</p>
+                            <p>Многолетний опыт <br> в области</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-button-next !text-white !opacity-[.3] !px-[50px] max-[840px]:!hidden"></div>
+            <div class="swiper-button-prev !text-white !opacity-[.3] !px-[50px] max-[840px]:!hidden"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </section>
+
+    <!-- article -->
+    <section class="p-[80px_100px] max-[840px]:p-[40px_0px]">
+        <div class="csContainer">
+
+            <p class="font-[400] max-[520px]:font-[300] text-[#808080]">
+                Переезд может стать одним из самых приятных и волнительных моментов в жизни — главное, подойти к нему
+                грамотно и
+                ответственно. Если всё тщательно спланировано, весь процесс займет всего один день. Уже к вечеру вы
+                сможете
+                устроиться в
+                любимом кресле, оглядеть свою новую квартиру, где мебель стоит на своих местах, а вещи аккуратно
+                разложены.
+                В доме
+                чистота и порядок, вы чувствуете себя бодро и спокойно — отличное время, чтобы начать планировать
+                новоселье!
+                Такой
+                удобный и доступный переезд возможен и для вас — просто доверьте его нашей команде.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- order steps -->
+    <section class="py-[20px]">
+        <h1 class="title">Заказать переезд просто</h1>
+
+        <div class="csContainer">
+            <div
+                class="grid grid-cols-3 gap-[25px_30px] max-[1122px]:grid-cols-2 max-[750px]:grid-cols-1 max-[800px]:gap-[20px]">
+
+                <!-- 1 -->
+                <div class="flex flex-col gap-[20px] max-[800px]:text-center">
+                    <h1 class="font-[400] text-[56px] text-[#52ae32]">01</h1>
+
+                    <p class="text-[#202020] leading-[125%] max-[800px]:text-[15px]">Закажите переезд на нашем сайте
+                        всего в несколько кликов
+                    </p>
+
+                    <span class="h-[1px] w-[50%] bg-[#c8c8c8] max-[800px]:hidden"></span>
+                </div>
+
+
+                <!-- 2 -->
+                <div class="flex flex-col gap-[20px] max-[800px]:text-center">
+                    <h1 class="font-[400] text-[56px] text-[#52ae32]">02</h1>
+
+                    <p class="text-[#202020] leading-[125%] max-[800px]:text-[15px]">
+                        Дождитесь звонка менеджера.
+                        Обычно это занимает не более 5 минут
+                    </p>
+
+                    <span class="h-[1px] w-[50%] bg-[#c8c8c8] max-[800px]:hidden"></span>
+                </div>
+
+                <!-- 3 -->
+                <div class="flex flex-col gap-[20px] max-[800px]:text-center">
+                    <h1 class="font-[400] text-[56px] text-[#52ae32]">03</h1>
+
+                    <p class="text-[#202020] leading-[125%] max-[800px]:text-[15px]">
+                        По необходимости, к Вам может выехать замерщик для составления сметы переезд
+                    </p>
+
+                    <span class="h-[1px] w-[50%] bg-[#c8c8c8] max-[800px]:hidden"></span>
+                </div>
+
+                <!-- 4 -->
+                <div class="flex flex-col gap-[20px] max-[800px]:text-center">
+                    <h1 class="font-[400] text-[56px] text-[#52ae32]">04</h1>
+
+                    <p class="text-[#202020] leading-[125%] max-[800px]:text-[15px]">
+                        Подписание договора и оформление переезда по указанному адресу
+                    </p>
+
+                    <span class="h-[1px] w-[50%] bg-[#c8c8c8] max-[800px]:hidden"></span>
+                </div>
+
+                <!-- 5 -->
+                <div class="flex flex-col gap-[20px] max-[800px]:text-center">
+                    <h1 class="font-[400] text-[56px] text-[#52ae32]">05</h1>
+
+                    <p class="text-[#202020] leading-[125%] max-[800px]:text-[15px]">
+                        В назначенное время наши грузчики организуют переезд
+                    </p>
+
+                    <span class="h-[1px] w-[50%] bg-[#c8c8c8] max-[800px]:hidden"></span>
+                </div>
+
+                <!-- 6 -->
+                <div class="flex flex-col gap-[20px] max-[800px]:text-center">
+                    <h1 class="font-[400] text-[56px] text-[#52ae32]">06</h1>
+
+                    <p class="text-[#202020] leading-[125%] max-[800px]:text-[15px]">
+                        Все Ваши вещи будут бережно доставлены по адресу
+                    </p>
+
+                    <span class="h-[1px] w-[50%] bg-[#c8c8c8] max-[800px]:hidden"></span>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- discount cards -->
+    <section class="py-[30px]">
+        <h1 class="title">Акции и скидки</h1>
+
+        <div class="csContainer">
+            <div class="grid grid-cols-2 gap-[25px] max-[750px]:grid-cols-1">
+
+                <div class="flex justify-between items-start bg-[#52ae32] relative overflow-hidden h-[240px]">
+                    <div class="p-[15px] flex flex-col gap-[15px] z-1">
+                        <h3 class="font-[500] text-[20px] text-[#ffe684]">СКИДКА 15% <br> НА КАРТОННЫЕ КОРОБКИ</h3>
+
+                        <h3 class="font-[500] text-[20px] text-[#fff]">ПРИ ЗАКАЗЕ ЛЮБОГО <br> ПЕРЕЕЗДА</h3>
+                    </div>
+
+                    <img src="./src/img/discount/1.png" alt="boxes"
+                        class="absolute bottom-[15px] right-[15px] h-[80%] max-[450px]:h-[60%]">
+                </div>
+
+                <div class="flex justify-end items-start bg-[#eaeaea] relative overflow-hidden h-[240px]">
+                    <img src="./src/img/discount/2.png" alt="boxes"
+                        class="absolute bottom-0 left-0 h-[80%] max-[450px]:h-[60%]">
+
+                    <div class="p-[15px] flex flex-col gap-[15px] z-1">
+                        <h3 class="font-[500] text-[20px] text-[#52ae32]">СКИДКА 20% НА <br>
+                            ВОЗДУШНЫЕ ПЛЁНКИ</h3>
+
+                        <h3 class="font-[500] text-[20px] text-[#202020]">ПРИ УПАКОВКИ <br> МЕБЕЛИ</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- services -->
+    <section class="py-[30px]">
+        <h1 class="title">Наши услуги</h1>
+
+        <div class="csContainer">
+
+            <div class="grid grid-cols-2 gap-[20px]">
+
+                <!-- column 1 -->
+                <div class="grid grid-cols-2 gap-[20px] *:bg-[#f3f3f3]">
+
+                    <div class="h-[300px] w-[300px] relative overflow-hidden group">
+                        <!-- top -->
+                        <div
+                            class="absolute top-[-100%] left-0 h-full w-full *:w-[200px] bg-[#52ae32] z-1 flex flex-col justify-center items-center gap-[10px] group-hover:top-0">
+                            <button class="btn !border-white">
+                                Подробнее
+                            </button>
+
+                            <button class="btn btn-white !border-white">
+                                Заказать услугу
+                            </button>
+                        </div>
+
+                        <p class="font-[500] text-[#202020] p-[15px] leading-[125%]">Квартирный переезд <br> в Ташкенте
+                        </p>
+
+                        <img src="./src/img/services/1.png" alt="box" class="absolute bottom-0 right-0 h-[70%]">
+                    </div>
+
+                    <div class="h-[300px] w-[300px] relative flex justify-end items-end overflow-hidden group">
+                        <!-- top -->
+                        <div
+                            class="absolute top-[-100%] left-0 h-full w-full *:w-[200px] bg-[#52ae32] z-1 flex flex-col justify-center items-center gap-[10px] group-hover:top-0">
+                            <button class="btn !border-white">
+                                Подробнее
+                            </button>
+
+                            <button class="btn btn-white !border-white">
+                                Заказать услугу
+                            </button>
+                        </div>
+
+                        <img src="./src/img/services/2.png" alt="box" class="absolute top-1 left-1 h-[60%]">
+
+                        <p class="font-[500] text-[#202020] p-[15px] leading-[125%] text-end">Офисный переезд <br> в
+                            Ташкенте
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="bg-[#f3f3f3] relative flex justify-end items-start overflow-hidden group">
+                    <!-- top -->
+                    <div
+                        class="absolute top-[-100%] left-0 h-full w-full *:w-[200px] bg-[#52ae32] z-1 flex flex-col justify-center items-center gap-[10px] group-hover:top-0">
+                        <button class="btn !border-white">
+                            Подробнее
+                        </button>
+
+                        <button class="btn btn-white !border-white">
+                            Заказать услугу
+                        </button>
+                    </div>
+
+                    <img src="./src/img/services/3.png" alt="man" class="absolute left-[20px] bottom-0  object-contain">
+
+                    <div class="flex flex-col justify-between items-end h-full p-[15px]">
+
+                        <div class="flex flex-col justify-start items-end gap-[10px]">
+                            <p class="font-[500] text-[#202020] leading-[125%] text-end">Услуги грузчиков в
+                                Ташкенте</p>
+                            <small class="p-[2px_8px] rounded-[6px] bg-[#fd5]">2 490 сум за минуту</small>
+                        </div>
+
+                        <div class="flex justify-end items-center gap-[15px]">
+                            <a href="#!" class="text-[#52ae32]">Подробнее</a>
+                            <button class="btn">Заказать услугу</button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- column 2 -->
+                <div class="bg-[#f3f3f3] relative flex justify-end items-start overflow-hidden group">
+                    <!-- top -->
+                    <div
+                        class="absolute top-[-100%] left-0 h-full w-full *:w-[200px] bg-[#52ae32] z-1 flex flex-col justify-center items-center gap-[10px] group-hover:top-0">
+                        <button class="btn !border-white">
+                            Подробнее
+                        </button>
+
+                        <button class="btn btn-white !border-white">
+                            Заказать услугу
+                        </button>
+                    </div>
+
+                    <img src="./src/img/services/4.png" alt="man"
+                        class="absolute right-[10px] bottom-[20px] h-[60%] object-contain">
+
+                    <div class="flex flex-col justify-between items-start h-full w-full p-[15px]">
+
+                        <p class="font-[500] text-[#202020] leading-[125%] text-start">
+                            Грузоперевозки по <br> городу Ташкенту
+                        </p>
+
+                        <div class="flex justify-start items-center gap-[15px]">
+                            <a href="#!" class="text-[#52ae32]">Подробнее</a>
+                            <button class="btn">Заказать услугу</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-[20px] *:bg-[#f3f3f3]">
+
+                    <div class="h-[300px] w-[300px] relative overflow-hidden group">
+                        <!-- top -->
+                        <div
+                            class="absolute top-[-100%] left-0 h-full w-full *:w-[200px] bg-[#52ae32] z-1 flex flex-col justify-center items-center gap-[10px] group-hover:top-0">
+                            <button class="btn !border-white">
+                                Подробнее
+                            </button>
+
+                            <button class="btn btn-white !border-white">
+                                Заказать услугу
+                            </button>
+                        </div>
+
+                        <p class="font-[500] text-[#202020] p-[15px] leading-[125%]">
+                            Разборка-сборка <br> мебели
+                        </p>
+
+                        <img src="./src/img/services/5.png" alt="box" class="absolute bottom-0 right-0 h-[50%]">
+                    </div>
+
+                    <div class="h-[300px] w-[300px] relative flex justify-end items-end overflow-hidden group">
+                        <!-- top -->
+                        <div
+                            class="absolute top-[-100%] left-0 h-full w-full *:w-[200px] bg-[#52ae32] z-1 flex flex-col justify-center items-center gap-[10px] group-hover:top-0">
+                            <button class="btn !border-white">
+                                Подробнее
+                            </button>
+
+                            <button class="btn btn-white !border-white">
+                                Заказать услугу
+                            </button>
+                        </div>
+
+                        <img src="./src/img/services/6.png" alt="box" class="absolute top-1 left-1 h-[50%]">
+
+                        <p class="font-[500] text-[#202020] p-[15px] leading-[125%] text-end">
+                            Монтаж кондиционера
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./src/js/swiper.js"></script>
+
+    <!-- main js -->
+    <script src="./src/js/main.js"></script>
+
 </body>
 
 </html>
