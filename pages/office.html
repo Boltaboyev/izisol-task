@@ -1,11 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Офисный переезд в Ташкенте</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="../src/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../src/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../src/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../src/img/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="УП" />
+    <link rel="manifest" href="../src/img/favicon/site.webmanifest" />
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- style -->
+    <link rel="stylesheet" href="../src/css/output.css">
 </head>
+
 <body>
-    
+
+    <!-- header -->
+    <header class="bg-[#f8f8f8] h-[70px] flex justify-center items-center select-none ">
+
+        <div class="csContainer flex justify-between items-center h-full ">
+
+            <a href="../index.html">
+                <img src="../src/img/logo.png" alt="" class="max-[350px]:w-[100px]">
+            </a>
+
+            <div class="flex flex-col justify-center items-center  h-full">
+                <!-- desktop links -->
+                <ul class="flex justify-between items-center gap-[50px] h-full max-[1130px]:hidden ">
+                    <li class="h-full flex relative">
+                        <a class="navbar-links font-[400] text-[16px] text-[#202020] hover:text-[#52ae32] h-full flex justify-center items-center cursor-pointer"
+                            onclick="toggleDropdown()">Услуги</a>
+
+                        <!-- Dropdown menu -->
+                        <div id="dropdown"
+                            class="absolute top-full left-0 shadow-[0_20px_20px_10px_rgba(0,0,0,0.1)] bg-[#fff] w-[280px] z-50 hidden">
+                            <div class="w-full">
+                                <a href="./apartment.html"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32] border-b border-gray-100">
+                                    Квартирный переезд
+                                </a>
+                                <a href="./office.html"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32] border-b border-gray-100">
+                                    Офисный переезд
+                                </a>
+                                <a href="./loader.html"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32] border-b border-gray-100">
+                                    Услуги грузчиков
+                                </a>
+                                <a href="./loader.html"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32] border-b border-gray-100">
+                                    Грузоперевозки
+                                </a>
+                                <a href="./furniture.html"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32] border-b border-gray-100">
+                                    Разборка-сборка мебели
+                                </a>
+                                <a href="./air-condition.html"
+                                    class="block px-4 py-3 text-[14px] text-[#202020] hover:bg-[#f0f9ec] hover:text-[#52ae32] border-b border-gray-100">
+                                    Монтаж кондиционера
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="h-full flex">
+                        <a class="navbar-links font-[400] text-[16px] text-[#202020] hover:text-[#52ae32]  h-full flex justify-center items-center"
+                            href="#clients">Партнеры</a>
+                    </li>
+
+                    <li class="h-full flex">
+                        <a class="navbar-links font-[400] text-[16px] text-[#202020] hover:text-[#52ae32]  h-full flex justify-center items-center"
+                            href="#galery">Галерея</a>
+                    </li>
+
+                    <li class="h-full flex">
+                        <a class="navbar-links font-[400] text-[16px] text-[#202020] hover:text-[#52ae32]  h-full flex justify-center items-center"
+                            href="#about">О нас</a>
+                    </li>
+
+                    <li class="h-full flex">
+                        <a class="navbar-links font-[400] text-[16px] text-[#202020] hover:text-[#52ae32]  h-full flex justify-center items-center"
+                            href="#contact">Контакты</a>
+                    </li>
+                </ul>
+
+                <!-- mobile links -->
+                <div id="mobile-menu"
+                    class="transition-all duration-300 ease-in-out max-[1130px]:flex hidden flex-col justify-between p-[10px_30px] h-fit w-full bg-white absolute -left-[100%] top-[70px] z-50">
+
+                    <details class="group font-[400] text-[16px] text-[#202020] py-[10px] border-b border-b-[#e3e3e3]">
+                        <summary class="flex items-center justify-between cursor-pointer">
+                            Услуги
+                            <!-- Custom arrow -->
+                            <svg class="w-6 h-6 transition-transform duration-300 -rotate-90 group-open:rotate-0"
+                                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </summary>
+
+                        <div class="flex flex-col p-[10px_30px] *:py-[7px] *:active:text-[#52ae32]">
+                            <a href="./apartment.html">Квартирный переезд</a>
+                            <a href="./office.html">Офисный переезд</a>
+                            <a href="./loader.html">Услуги грузчиков</a>
+                            <a href="./loader.html">Грузоперевозки</a>
+                            <a href="./furniture.html">Разборка-сборка мебели</a>
+                            <a href="./air-condition.html">Монтаж кондиционера</a>
+                        </div>
+                    </details>
+
+
+                    <a class="font-[400] text-[16px] text-[#202020] hover:text-[#52ae32] py-[10px]  border-b border-b-[#e3e3e3]"
+                        href="#clients">Партнеры</a>
+
+                    <a class=" font-[400] text-[16px] text-[#202020] hover:text-[#52ae32]  py-[10px] border-b border-b-[#e3e3e3]"
+                        href="#galery">Галерея</a>
+
+                    <a class="font-[400] text-[16px] text-[#202020] hover:text-[#52ae32]  py-[10px] border-b border-b-[#e3e3e3]"
+                        href="#about">О
+                        нас</a>
+
+                    <a class="font-[400] text-[16px] text-[#202020] hover:text-[#52ae32] py-[10px]"
+                        href="#contact">Контакты</a>
+
+
+                    <div class="py-[20px] flex flex-col gap-[10px]">
+                        <button class="btn !w-full">
+                            Задать вопрос
+                        </button>
+
+                        <p class="text-[#333] font-semibold text-[14px] text-center">Мы в социальных сетях</p>
+
+                        <div class="flex justify-center items-center gap-[10px] *:cursor-pointer">
+                            <img src="./src/svg/instagram.svg" alt="">
+                            <img src="./src/svg/telegram.svg" alt="">
+                            <img src="./src/svg/facebook.svg" alt="">
+                            <img src="./src/svg/youtube.svg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="flex justify-between items-center gap-[30px]">
+
+                <!-- contact -->
+                <div class="flex flex-col justify-between items-start gap-0 leading-[100%]">
+                    <a class="text-[14px] font-[500] text-[#202020] hover:text-[#52ae32] max-[420px]:text-[13px]"
+                        href="tel:998942803738">+998
+                        94
+                        280 37
+                        38</a>
+                    <a class="text-[14px] font-[500] text-[#202020] hover:text-[#52ae32] max-[420px]:text-[13px]"
+                        href="tel:998933999051">+998
+                        93
+                        399 90
+                        51</a>
+                    <small class="font-[400] text-[12px] leading-[100%] text-[#7d7d7d] max-[420px]:hidden">c 8:00 до
+                        01:00,
+                        ежедневно</small>
+                </div>
+
+                <!-- desktop heder btn -->
+                <button class="btn max-[1130px]:hidden">
+                    Задать вопрос
+                </button>
+
+                <!-- menu btn -->
+                <i id="menu-btn"
+                    class="fa-solid fa-bars text-2xl w-[27px] justify-center items-center max-[1130px]:!flex !hidden cursor-pointer"></i>
+
+            </div>
+
+        </div>
+    </header>
+
+    <!-- info -->
+    <section class="py-[40px]">
+        <div class="csContainer">
+            <div class="w-[80%] m-auto flex flex-col gap-[20px] max-[850px]:w-full">
+                <img src="../src/img/page-images/office-moving.png" alt="">
+
+                <h1 class="title !text-[#52ae32] !m-0 max-[850px]:!text-[20px]">Офисный переезд в Ташкенте</h1>
+
+                <p class="font-[400] text-[18px] leading-[140%] text-justify text-[#414141]">
+                    Офисный переезд - это процесс перемещения офиса или рабочего пространства из одного места в другое.
+                    Он может быть вызван
+                    различными причинами, такими как расширение компании, изменение места работы или сокращение затрат
+                    на аренду.
+                    Организация офисного переезда требует более тщательной планировки и координации, чем квартирный
+                    переезд, так как в офисе
+                    обычно работает много людей и имеется большое количество оборудования, документов и других
+                    ценностей. Перед переездом
+                    следует разработать подробный план, определить бюджет, заранее оценить объем перевозимого
+                    оборудования и имущества и
+                    спланировать логистические аспекты переезда. Важными этапами офисного переезда являются:
+
+                    1. Уведомление сотрудников: сообщите всем сотрудникам о переезде заранее, чтобы они могли
+                    подготовиться.
+
+                    2. Упаковка и пометка: упакуйте мебель, оборудование и документы в специальные коробки или
+                    контейнеры. Пометьте каждый
+                    предмет, чтобы облегчить распаковку и расстановку в новом офисе.
+
+                    3. Использование профессиональных услуг: при необходимости обратитесь к специализированным
+                    компаниям, которые оказывают
+                    услуги по переезду офиса. Они обладают опытом в организации переездов, имеют нужное оборудование и
+                    могут обеспечить
+                    безопасную и качественную перевозку.
+
+                    4. Инфраструктура: заранее подготовьте новый офисный пространство, проверьте наличие необходимой
+                    инфраструктуры –
+                    электричество, интернет, телефоны, мебель и т.д.
+
+                    5. Обновление данных: обновите адреса и контактные данные во всех документах и системах, уведомите
+                    клиентов и партнеров
+                    о новом месте нахождения офиса.
+
+                    6. Планировка и расстановка: создайте план нового офисного пространства, чтобы убедиться, что все
+                    мебель и оборудование
+                    размещены удобно и эффективно.
+
+                    7. Пробный переезд: проведите пробный переезд, чтобы убедиться, что все системы работают нормально,
+                    а новое офисное
+                    пространство соответствует потребностям компании. Офисный переезд может быть сложным и
+                    требовательным процессом, но с
+                    правильной планировкой и организацией он может пройти успешно и без перебоев. Важно уделить
+                    достаточно времени для
+                    подготовки и внимательно следовать плану, чтобы минимизировать временные и финансовые потери.
+                </p>
+
+                <button class="btn m-auto max-[400px]:w-full">
+                    Оставить заявку
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="pt-[30px]">
+        <div class="csContainer border-t border-[#eaeaea] py-[50px]">
+            <div class="grid grid-cols-4 gap-[20px] max-[1040px]:grid-cols-1">
+                <!-- logo -->
+                <a href="#!"><img src="../src/img/logo.png" alt=""></a>
+
+                <!-- links -->
+                <div class="flex flex-col gap-[15px]">
+                    <h3 class="uppercase">Меню</h3>
+
+                    <ul class="space-y-3">
+                        <li class="font-[400] text-[16px] text-[#c0c0c0] hover:text-[#52ae32]"><a href="#!">Главная</a>
+                        </li>
+                        <li class="font-[400] text-[16px] text-[#c0c0c0] hover:text-[#52ae32]"><a href="#!">О нас</a>
+                        </li>
+                        <li class="font-[400] text-[16px] text-[#c0c0c0] hover:text-[#52ae32]"><a href="#!">Партнеры</a>
+                        </li>
+                        <li class="font-[400] text-[16px] text-[#c0c0c0] hover:text-[#52ae32]"><a href="#!">Галерея</a>
+                        </li>
+                        <li class="font-[400] text-[16px] text-[#c0c0c0] hover:text-[#52ae32]"><a href="#!">Услуги</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- Contact -->
+                <div class="flex flex-col gap-[15px]">
+                    <h3 class="uppercase">Контакты</h3>
+
+                    <ul class="space-y-3">
+                        <li class="font-[400] text-[16px] text-[#c0c0c0] hover:text-[#52ae32]">
+                            <i class="fa-solid fa-location-dot"></i>
+                            г.Ташкент, массив Себзар
+                            М17/18, дом 4, кв 3
+                        </li>
+
+                        <li class="font-[400] text-[16px] text-[#c0c0c0] hover:text-[#52ae32]">
+                            <a href="#!">
+                                <i class="fa-solid fa-envelope"></i>
+                                info@eastline.uz
+                            </a>
+                        </li>
+
+                        <li class="font-[400] text-[16px] text-[#c0c0c0] hover:text-[#52ae32]">
+                            <a href="#!">
+                                <i class="fa-solid fa-phone"></i>
+                                +998 94 280 37 38
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- Social links -->
+                <div class="flex justify-end max-[1040px]:justify-start">
+                    <div class="flex flex-col gap-[15px]">
+                        <h3 class="uppercase">Социальные сети</h3>
+
+                        <div class="flex justify-start items-center gap-[10px]">
+                            <a href="#!"><img src="../src/svg/instagram.svg" alt=""></a>
+                            <a href="#!"><img src="../src/svg/telegram.svg" alt=""></a>
+                            <a href="#!"><img src="../src/svg/facebook.svg" alt=""></a>
+                            <a href="#!"><img src="../src/svg/youtube.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bg-[#f0f0f0] py-[5px] text-[14px] text-[#c0c0c0] text-center font-normal">
+            © 2025 “Eastline Express LLC”. Все права защищены.
+        </div>
+    </footer>
+
+    <!-- main js -->
+    <script>
+        // header dropdown btn
+        function toggleDropdown() {
+            const dropdown = document.getElementById("dropdown")
+            dropdown.classList.toggle("hidden")
+        }
+
+        document.addEventListener("click", function (event) {
+            const dropdown = document.getElementById("dropdown")
+            const servicesLink = event.target.closest('a[onclick="toggleDropdown()"]')
+
+            if (!servicesLink && !dropdown.contains(event.target)) {
+                dropdown.classList.add("hidden")
+            }
+        })
+
+        // header menu btn
+        const menuBtn = document.getElementById("menu-btn")
+        const menu = document.getElementById("mobile-menu")
+
+        let isOpen = false
+
+        menuBtn.addEventListener("click", () => {
+            isOpen = !isOpen
+
+            menuBtn.classList.toggle("fa-bars", !isOpen)
+            menuBtn.classList.toggle("fa-xmark", isOpen)
+
+            if (isOpen) {
+                menu.classList.remove("-left-[100%]")
+                menu.classList.add("left-0")
+            } else {
+                menu.classList.remove("left-0")
+                menu.classList.add("-left-[100%]")
+            }
+        })
+
+    </script>
+
 </body>
+
 </html>

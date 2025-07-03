@@ -315,6 +315,9 @@
   .w-\[70\%\] {
     width: 70%;
   }
+  .w-\[80\%\] {
+    width: 80%;
+  }
   .w-\[280px\] {
     width: 280px;
   }
@@ -579,6 +582,9 @@
   .py-\[30px\] {
     padding-block: 30px;
   }
+  .py-\[40px\] {
+    padding-block: 40px;
+  }
   .py-\[50px\] {
     padding-block: 50px;
   }
@@ -593,6 +599,9 @@
   }
   .text-end {
     text-align: end;
+  }
+  .text-justify {
+    text-align: justify;
   }
   .text-start {
     text-align: start;
@@ -640,6 +649,10 @@
     --tw-leading: 125%;
     line-height: 125%;
   }
+  .leading-\[140\%\] {
+    --tw-leading: 140%;
+    line-height: 140%;
+  }
   .leading-\[167\%\] {
     --tw-leading: 167%;
     line-height: 167%;
@@ -668,6 +681,9 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
+  .\!text-\[\#52ae32\] {
+    color: #52ae32 !important;
+  }
   .\!text-white {
     color: var(--color-white) !important;
   }
@@ -688,6 +704,9 @@
   }
   .text-\[\#202020\] {
     color: #202020;
+  }
+  .text-\[\#414141\] {
+    color: #414141;
   }
   .text-\[\#717171\] {
     color: #717171;
@@ -941,9 +960,19 @@
       grid-template-columns: repeat(1, minmax(0, 1fr));
     }
   }
+  .max-\[850px\]\:w-full {
+    @media (width < 850px) {
+      width: 100%;
+    }
+  }
   .max-\[850px\]\:grid-cols-2 {
     @media (width < 850px) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .max-\[850px\]\:\!text-\[20px\] {
+    @media (width < 850px) {
+      font-size: 20px !important;
     }
   }
   .max-\[840px\]\:\!hidden {
@@ -1098,6 +1127,11 @@
   .max-\[400px\]\:hidden {
     @media (width < 400px) {
       display: none;
+    }
+  }
+  .max-\[400px\]\:w-full {
+    @media (width < 400px) {
+      width: 100%;
     }
   }
   .max-\[400px\]\:text-\[25px\] {
