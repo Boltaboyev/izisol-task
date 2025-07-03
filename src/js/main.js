@@ -1,3 +1,8 @@
+// aos
+AOS.init({
+    once: true,
+    mirror: false,
+})
 
 // header dropdown btn
 function toggleDropdown() {
@@ -24,7 +29,7 @@ menuBtn.addEventListener("click", () => {
     isOpen = !isOpen
 
     menuBtn.classList.toggle("fa-bars", !isOpen)
-    menuBtn.classList.toggle("fa-xmark", isOpen) 
+    menuBtn.classList.toggle("fa-xmark", isOpen)
 
     if (isOpen) {
         menu.classList.remove("-left-[100%]")
