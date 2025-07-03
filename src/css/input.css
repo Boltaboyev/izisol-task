@@ -6,9 +6,10 @@
     transition: all 0.2s;
 }
 
-html {
+html,
+body {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 ::-webkit-scrollbar {
